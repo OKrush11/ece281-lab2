@@ -54,14 +54,14 @@ test_process : process
 begin 
    --w_button <= "0000"; wait for 10 ns;
         --assert (w_display = "1111110") report "bad 0" severity failure;
-  -- w_button <= "1010"; wait for 10 ns;
-        --assert (w_display = "1110111") report "bad A" severity failure; 
-   --w_button <= "1111"; wait for 10 ns;
-        --assert (w_display = "1000111") report "bad F" severity failure;    
-   --w_button <= "1100"; wait for 10 ns;
+  w_button <= "1010"; wait for 10 ns;
+        assert (w_display = "1110111") report "bad A" severity failure; 
+   w_button <= "1111"; wait for 10 ns;
+        assert (w_display = "1000111") report "bad F" severity failure;    
+   w_button <= "1100"; wait for 10 ns;
         --assert (w_display = "0001101") report "bad C" severity failure; 
-   --w_button <= "0011"; wait for 10 ns;
-        --assert (w_display = "1111001") report "bad 3" severity failure;      
+   w_button <= "0011"; wait for 10 ns;
+        assert (w_display = "1111001") report "bad 3" severity failure;      
 end process;
 
 end Behavioral;
